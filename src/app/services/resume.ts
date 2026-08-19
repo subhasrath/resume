@@ -15,6 +15,7 @@ export class ResumeService {
       title: '',
       location: '',
       email: '',
+      phone: '',
       github: '',
       linkedin: '',
       resumeUrl: '',
@@ -29,6 +30,8 @@ export class ResumeService {
     projects: [],
 
     education: [],
+    languages: [],
+    interests: []
   });
 
   constructor() {

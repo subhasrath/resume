@@ -3,12 +3,13 @@
     "name": "Subhas Chandra Rath",
     "shortName": "SR",
     "title": "Software Developer",
-    "location": "India",
+    "location": "Chaktarowan, Haldia, 721607, West Bengal, India",
     "email": "subhas.rath15@gmail.com",
-    "github": "https://github.com/subhasrath",
-    "linkedin": "https://www.linkedin.com/in/subhasrath/",
+    "phone": "+91 8967814422",
+    "github": "https://github.com/subhasrath-40b17a172",
+    "linkedin": "",
     "resumeUrl": "assets/resume.pdf",
-    "summary": "Software Developer specializing in Java, Spring, Spring Boot, Angular and PostgreSQL, with a focus on building maintainable enterprise applications and modern web interfaces.",
+    "summary": "Software developer with 4.7 years of hands-on experience in developing Web and Enterprise Applications using backend technologies like Spring, Spring Boot, Java, J2EE, and frontend frameworks like Angular.",
     "availability": "Open to opportunities"
   },
   "experience": [
@@ -19,30 +20,27 @@
       "endDate": "Present",
       "location": "India",
       "description": [
-        "Developing enterprise web applications using Angular and Java-based technologies.",
-        "Building reusable frontend components and integrating REST APIs.",
-        "Working with PostgreSQL and DB2-backed business applications.",
-        "Contributing to application architecture, deployment and UI modernization."
+        "Maintaining and improving the performance of existing software.",
+        "Designing and updating software databases.",
+        "Recommending improvements to existing software programs as necessary."
       ],
       "technologies": [
         "Java",
         "Spring",
         "Spring Boot",
-        "Angular",
-        "TypeScript",
-        "PostgreSQL",
-        "DB2"
+        "Angular"
       ]
     },
     {
-      "company": "Pioneer E Solutions",
-      "position": "Software Developer",
-      "startDate": "Previous",
-      "endDate": "Previous",
+      "company": "Velocis Systems Pvt. Ltd.",
+      "position": "Software Engineer",
+      "startDate": "October 2022",
+      "endDate": "March 2023",
       "location": "India",
       "description": [
-        "Worked on web application development and software maintenance.",
-        "Contributed to backend and frontend application features."
+        "Maintaining and improving the performance of existing software.",
+        "Designing and updating software databases.",
+        "Recommending improvements to existing software programs as necessary."
       ],
       "technologies": [
         "Java",
@@ -52,117 +50,184 @@
       ]
     },
     {
-      "company": "Velocis Systems",
-      "position": "Software Developer",
-      "startDate": "Previous",
-      "endDate": "Previous",
+      "company": "Pioneer E Solutions",
+      "position": "Software Engineer",
+      "startDate": "January 2022",
+      "endDate": "September 2022",
       "location": "India",
       "description": [
-        "Worked on enterprise software development and application support."
+        "Maintaining and improving the performance of existing software.",
+        "Designing and updating software databases.",
+        "Recommending improvements to existing software programs as necessary."
       ],
       "technologies": [
         "Java",
         "J2EE",
-        "Spring"
+        "Spring",
+        "Angular"
       ]
     }
   ],
   "skills": [
     {
-      "name": "Backend",
+      "name": "Programming Languages",
       "skills": [
         "Java",
-        "J2EE",
-        "Spring",
-        "Spring Boot",
-        "REST API"
+        "JavaScript"
       ]
     },
     {
-      "name": "Frontend",
+      "name": "Frameworks",
       "skills": [
-        "Angular",
-        "TypeScript",
-        "HTML",
-        "CSS",
-        "Tailwind CSS",
-        "Responsive UI"
+        "Spring MVC",
+        "Spring Boot"
       ]
     },
     {
-      "name": "Database",
+      "name": "UI Technologies",
       "skills": [
-        "PostgreSQL",
-        "DB2",
-        "MySQL"
+        "Angular"
       ]
     },
     {
-      "name": "Tools & Platform",
+      "name": "Databases",
       "skills": [
-        "Git",
-        "Docker",
-        "Linux",
-        "Tomcat",
-        "GitHub"
+        "Postgres"
+      ]
+    },
+    {
+      "name": "Report Tool",
+      "skills": [
+        "i-net Clear Reports"
+      ]
+    },
+    {
+      "name": "Server",
+      "skills": [
+        "Apache Tomcat"
+      ]
+    },
+    {
+      "name": "Development Tools",
+      "skills": [
+        "Eclipse"
       ]
     }
   ],
   "projects": [
     {
-      "name": "Enterprise Business Application Portal",
-      "description": "A centralized Angular portal for launching and managing multiple enterprise business applications with shared navigation and reusable UI architecture.",
-      "technologies": [
-        "Angular",
-        "TypeScript",
-        "Tailwind CSS",
-        "Spring Boot"
+      "name": "Port Operation and Management System for Haldia Dock Complex",
+      "period": "January 2022 — Present",
+      "company": "NIC (National Informatics Centre)",
+      "description": "Analyzing requirements, documenting and coding requirements, developing and maintaining the application, enhancing existing modules, coordinating tasks with team members, and communicating with clients to understand requirements.",
+      "details": [
+        "Developed various statistical reports using i-net Clear Reports.",
+        "Development and maintenance of existing modules.",
+        "Development and enhancement of existing functionality.",
+        "Coordinating and communicating tasks with other team members.",
+        "Participating in meetings to understand client requirements."
       ],
-      "github": "https://github.com/YOUR_USERNAME",
+      "technologies": [
+        "Java",
+        "J2EE",
+        "Spring",
+        "Spring Boot",
+        "Angular",
+        "Postgres",
+        "i-net Clear Reports",
+        "Apache Tomcat"
+      ],
+      "github": "",
+      "live": "",
       "featured": true
     },
     {
-      "name": "Electricity Billing Application",
-      "description": "A business application for electricity billing workflows, form processing, billing operations and bill preview.",
-      "technologies": [
-        "Angular",
-        "Spring Boot",
-        "PostgreSQL",
-        "jsPDF"
+      "name": "Online Examination System",
+      "period": "July 2018 — July 2019",
+      "company": "B.Tech Project",
+      "description": "An online examination system developed as part of the B.Tech project.",
+      "details": [
+        "HTML, CSS, JavaScript, PHP, MySQL"
       ],
+      "technologies": [
+        "HTML",
+        "CSS",
+        "JavaScript",
+        "PHP",
+        "MySQL"
+      ],
+      "github": "",
+      "live": "",
       "featured": false
     },
     {
-      "name": "GIS Mapping Application",
-      "description": "A web-based GIS application using Angular and Leaflet to display plot boundaries and geographic business data.",
-      "technologies": [
-        "Angular",
-        "Leaflet",
-        "Spring Boot",
-        "PostgreSQL",
-        "proj4"
+      "name": "IoT based Intelligent Traffic Management System",
+      "period": "January 2020 — September 2021",
+      "company": "M.Tech Project",
+      "description": "An IoT-based intelligent traffic management system developed as part of the M.Tech project.",
+      "details": [
+        "Project developed using an Arduino board.",
+        "Backend programming using C and C++."
       ],
-      "featured": false
-    },
-    {
-      "name": "Expense Manager",
-      "description": "A personal expense and ledger application designed to maintain purchases, dues, earnings and financial entries.",
       "technologies": [
-        "Angular",
-        "Spring",
-        "Spring Boot",
-        "PostgreSQL"
+        "Arduino",
+        "C",
+        "C++",
+        "IoT"
       ],
+      "github": "",
+      "live": "",
       "featured": false
     }
   ],
   "education": [
     {
-      "degree": "M.Tech.",
+      "degree": "M.Tech. in Computer Science and Engineering",
       "institution": "Haldia Institute of Technology",
       "location": "Haldia, India",
-      "year": "2022",
+      "startDate": "July 2019",
+      "endDate": "September 2021",
+      "year": "2021",
+      "grade": "CGPA: 8.76",
       "description": "Master of Technology"
+    },
+    {
+      "degree": "B.Tech. in Computer Science and Engineering",
+      "institution": "Haldia Institute of Technology",
+      "location": "Haldia, India",
+      "startDate": "June 2016",
+      "endDate": "July 2019",
+      "year": "2019",
+      "grade": "CGPA: 6.64",
+      "description": "Bachelor of Technology"
+    },
+    {
+      "degree": "Diploma in Computer Science and Technology",
+      "institution": "Global Institute of Science & Technology",
+      "location": "Haldia, India",
+      "startDate": "June 2012",
+      "endDate": "July 2015",
+      "year": "2015",
+      "grade": "Percentage: 68.8%",
+      "description": "Diploma in Computer Science and Technology"
+    },
+    {
+      "degree": "Secondary Education",
+      "institution": "Haldia Govt. Spon. Vivekananda Vidya Bhaban",
+      "location": "Haldia, India",
+      "startDate": "January 2009",
+      "endDate": "April 2010",
+      "year": "2010",
+      "grade": "Percentage: 61.12%",
+      "description": "Secondary Education"
     }
+  ],
+  "languages": [
+    "English",
+    "Bengali",
+    "Hindi"
+  ],
+  "interests": [
+    "Gardening"
   ]
 }

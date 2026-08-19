@@ -4,6 +4,7 @@ export interface PersonalInfo {
   title: string;
   location: string;
   email: string;
+  phone: string;
   github: string;
   linkedin: string;
   resumeUrl: string;
@@ -23,7 +24,10 @@ export interface Experience {
 
 export interface Project {
   name: string;
+  period: string;
+  company: string;
   description: string;
+  details: string[];
   technologies: string[];
   github?: string;
   live?: string;
@@ -34,7 +38,10 @@ export interface Education {
   degree: string;
   institution: string;
   location: string;
+  startDate: string;
+  endDate: string;
   year: string;
+  grade: string;
   description?: string;
 }
 
@@ -49,4 +56,6 @@ export interface ResumeData {
   skills: SkillGroup[];
   projects: Project[];
   education: Education[];
+  languages: string[];
+  interests: string[];
 }

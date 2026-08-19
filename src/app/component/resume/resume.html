@@ -1,13 +1,19 @@
 <div
-  class="min-h-screen transition-colors duration-300"
+  class="site-shell min-h-screen transition-colors duration-500"
   [class.bg-slate-950]="darkMode()"
   [class.text-slate-100]="darkMode()"
   [class.bg-slate-50]="!darkMode()"
-  [class.text-slate-900]="!darkMode()">
+  [class.text-slate-900]="!darkMode()"
+  [class.theme-light]="!darkMode()">
+
+  <div class="scroll-progress" [style.width.%]="scrollProgress()"></div>
+  <div class="ambient ambient-one"></div>
+  <div class="ambient ambient-two"></div>
+  <div class="ambient ambient-three"></div>
 
   <!-- Navigation -->
   <header
-    class="fixed inset-x-0 top-0 z-50 border-b backdrop-blur-xl"
+    class="site-header fixed inset-x-0 top-0 z-50 border-b backdrop-blur-xl"
     [class.border-white\/10]="darkMode()"
     [class.bg-slate-950\/80]="darkMode()"
     [class.border-slate-200]="!darkMode()"
@@ -24,13 +30,14 @@
         </div>
       </a>
 
-      <div class="hidden items-center gap-7 md:flex">
-        <a href="#about" class="nav-link">About</a>
-        <a href="#experience" class="nav-link">Experience</a>
-        <a href="#skills" class="nav-link">Skills</a>
-        <a href="#projects" class="nav-link">Projects</a>
-        <a href="#education" class="nav-link">Education</a>
-        <a href="#contact" class="nav-link">Contact</a>
+      <div class="hidden items-center gap-1 md:flex">
+        <button *ngFor="let item of ['about', 'experience', 'skills', 'projects', 'education', 'contact']"
+          type="button"
+          class="nav-link"
+          [class.active]="activeSection() === item"
+          (click)="scrollTo(item)">
+          {{ item | titlecase }}
+        </button>
       </div>
 
       <div class="flex items-center gap-2">
@@ -70,86 +77,101 @@
 
   <main>
     <!-- Hero -->
-    <section id="home" class="relative overflow-hidden pt-32">
-      <div class="hero-grid absolute inset-0 -z-10"></div>
-      <div class="mx-auto grid max-w-6xl gap-14 px-5 pb-24 pt-16 lg:grid-cols-[1.4fr_0.6fr] lg:px-8 lg:pb-32 lg:pt-24">
-        <div class="flex flex-col justify-center">
-          <div class="mb-6 inline-flex w-fit items-center gap-2 rounded-full border border-cyan-400/20 bg-cyan-400/10 px-4 py-2 text-sm text-cyan-300">
+    <section id="home" class="hero-section relative overflow-hidden pt-32">
+      <div class="hero-grid absolute inset-0 -z-10"></div><div class="hero-noise"></div>
+      <div class="hero-container mx-auto grid max-w-6xl gap-14 px-5 pb-24 pt-16 lg:grid-cols-[1.4fr_0.6fr] lg:px-8 lg:pb-32 lg:pt-24">
+        <div class="hero-copy flex flex-col justify-center">
+          <div class="reveal reveal-up mb-6 inline-flex w-fit items-center gap-2 rounded-full border border-cyan-400/20 bg-cyan-400/10 px-4 py-2 text-sm text-cyan-300">
             <span class="h-2 w-2 animate-pulse rounded-full bg-cyan-400"></span>
             {{ resume().personal.availability }}
           </div>
 
-          <p class="mb-3 text-lg text-slate-400">Hi, I'm</p>
+          <p class="reveal reveal-up reveal-delay-1 mb-3 text-lg text-slate-400">Hi, I'm</p>
 
-          <h1 class="max-w-4xl text-5xl font-black tracking-tight sm:text-6xl lg:text-7xl">
+          <h1 class="reveal reveal-up reveal-delay-2 max-w-4xl text-5xl font-black tracking-tight sm:text-6xl lg:text-7xl">
             {{ resume().personal.name }}
           </h1>
 
-          <h2 class="mt-5 text-2xl font-semibold text-cyan-400 sm:text-3xl">
-            {{ resume().personal.title }}
+          <h2 class="reveal reveal-up reveal-delay-3 mt-5 min-h-10 text-2xl font-semibold text-cyan-400 sm:text-3xl">
+            <span class="text-gradient">I build {{ typedRole() }}</span><span class="typing-cursor"></span>
           </h2>
 
-          <p class="mt-7 max-w-2xl text-base leading-8 text-slate-400 sm:text-lg">
+          <p class="reveal reveal-up reveal-delay-4 mt-7 max-w-2xl text-base leading-8 text-slate-400 sm:text-lg">
             {{ resume().personal.summary }}
           </p>
 
-          <div class="mt-9 flex flex-wrap gap-3">
-            <a href="#experience" class="primary-button">Explore my work <span>↓</span></a>
+          <div class="reveal reveal-up reveal-delay-5 mt-9 flex flex-wrap gap-3">
+            <button type="button" class="primary-button" (click)="scrollTo('projects')">Explore my work <span>↓</span></button>
+            <a [href]="resume().personal.resumeUrl" target="_blank" rel="noopener" class="secondary-button">Download CV <span>↗</span></a>
             <a [href]="resume().personal.github" target="_blank" rel="noopener" class="secondary-button">GitHub ↗</a>
-            <a [href]="resume().personal.linkedin" target="_blank" rel="noopener" class="secondary-button">LinkedIn ↗</a>
+            <a *ngIf="resume().personal.linkedin" [href]="resume().personal.linkedin" target="_blank" rel="noopener" class="secondary-button">LinkedIn ↗</a>
           </div>
 
           <div class="mt-8 flex flex-wrap gap-x-6 gap-y-2 text-sm text-slate-400">
             <span>📍 {{ resume().personal.location }}</span>
+            <a [href]="'tel:' + resume().personal.phone" class="hover:text-cyan-400">
+              ☎ {{ resume().personal.phone }}
+            </a>
             <a [href]="'mailto:' + resume().personal.email" class="hover:text-cyan-400">
               ✉ {{ resume().personal.email }}
             </a>
           </div>
         </div>
 
-        <div class="flex items-center justify-center">
+        <div class="reveal reveal-scale reveal-delay-2 hero-visual flex items-center justify-center">
           <div class="relative">
             <div class="absolute -inset-8 rounded-full bg-cyan-500/10 blur-3xl"></div>
-            <div class="relative flex h-64 w-64 items-center justify-center rounded-[2rem] border border-white/10 bg-white/5 shadow-2xl backdrop-blur sm:h-80 sm:w-80">
-              <div class="flex h-48 w-48 items-center justify-center rounded-full bg-gradient-to-br from-cyan-400 via-blue-500 to-indigo-600 text-6xl font-black text-white shadow-2xl sm:h-60 sm:w-60 sm:text-7xl">
+            <div class="hero-card relative flex h-64 w-64 items-center justify-center rounded-[2rem] border border-white/10 bg-white/5 shadow-2xl backdrop-blur sm:h-80 sm:w-80">
+              <div class="hero-card-glow"></div>
+              <div class="hero-avatar flex h-48 w-48 items-center justify-center rounded-full bg-gradient-to-br from-cyan-400 via-blue-500 to-indigo-600 text-6xl font-black text-white shadow-2xl sm:h-60 sm:w-60 sm:text-7xl">
                 {{ initials(resume().personal.name) }}
               </div>
+              <div class="hero-code">&lt;<b>developer</b> /&gt;</div>
+              <div class="hero-mini-grid"><span>Java</span><span>Spring</span><span>Angular</span><span>PostgreSQL</span></div>
             </div>
+            <div class="orbit orbit-one"></div>
+            <div class="orbit orbit-two"></div>
+            <span class="float-chip chip-one">Java</span>
+            <span class="float-chip chip-two">Angular</span>
+            <span class="float-chip chip-three">Spring Boot</span>
           </div>
         </div>
       </div>
+      <button type="button" class="scroll-cue" (click)="scrollTo('about')" aria-label="Scroll to about">
+        <span>Scroll</span><span class="scroll-line"></span>
+      </button>
     </section>
 
     <!-- About -->
-    <section id="about" class="section">
+    <section id="about" class="section-shell section">
       <div class="section-inner">
-        <p class="section-eyebrow">01 — About</p>
-        <h2 class="section-title">Building useful software, not just interfaces.</h2>
+        <div class="reveal reveal-up"><p class="section-eyebrow">01 — About</p>
+        <h2 class="section-title">Building useful software, not just interfaces.</h2></div>
         <p class="section-text">
-          I work across frontend and backend technologies to build maintainable enterprise applications,
-          reusable UI components and reliable integrations. My core stack includes Java, Spring Boot,
-          Angular and PostgreSQL.
+          Software developer with 4.7 years of hands-on experience developing Web and Enterprise Applications.
+          I work with backend technologies including Spring, Spring Boot, Java and J2EE, and frontend
+          development using Angular.
         </p>
 
         <div class="mt-10 grid gap-4 sm:grid-cols-3">
-          <div class="stat-card">
-            <strong>Java</strong>
-            <span>Backend development</span>
+          <div class="stat-card reveal reveal-up">
+            <strong>4.7+</strong>
+            <span>Years of experience</span>
           </div>
-          <div class="stat-card">
+          <div class="stat-card reveal reveal-up">
+            <strong>Java + Spring</strong>
+            <span>Backend technologies</span>
+          </div>
+          <div class="stat-card reveal reveal-up">
             <strong>Angular</strong>
-            <span>Modern web applications</span>
-          </div>
-          <div class="stat-card">
-            <strong>PostgreSQL</strong>
-            <span>Data & persistence</span>
+            <span>Frontend development</span>
           </div>
         </div>
       </div>
     </section>
 
     <!-- Experience -->
-    <section id="experience" class="section">
+    <section id="experience" class="section-shell section">
       <div class="section-inner">
         <p class="section-eyebrow">02 — Experience</p>
         <h2 class="section-title">Where I've worked</h2>
@@ -157,7 +179,7 @@
         <div class="mt-12 space-y-8">
           <article
             *ngFor="let job of resume().experience"
-            class="timeline-card">
+            class="timeline-card reveal reveal-up">
             <div class="timeline-dot"></div>
 
             <div class="flex flex-col justify-between gap-2 md:flex-row">
@@ -187,13 +209,13 @@
     </section>
 
     <!-- Skills -->
-    <section id="skills" class="section">
+    <section id="skills" class="section-shell section">
       <div class="section-inner">
         <p class="section-eyebrow">03 — Skills</p>
         <h2 class="section-title">My technical toolkit</h2>
 
         <div class="mt-12 grid gap-5 md:grid-cols-2">
-          <article *ngFor="let group of resume().skills" class="skill-group">
+          <article *ngFor="let group of resume().skills" class="skill-group reveal reveal-up">
             <h3>{{ group.name }}</h3>
             <div class="mt-5 flex flex-wrap gap-2">
               <span *ngFor="let skill of group.skills" class="skill-pill">{{ skill }}</span>
@@ -204,23 +226,24 @@
     </section>
 
     <!-- Projects -->
-    <section id="projects" class="section">
+    <section id="projects" class="section-shell section">
       <div class="section-inner">
         <p class="section-eyebrow">04 — Projects</p>
-        <h2 class="section-title">Things I've built</h2>
+        <h2 class="section-title">Projects & professional work</h2>
 
         <div class="mt-12 grid gap-5 md:grid-cols-2">
           <article
             *ngFor="let project of resume().projects"
-            class="project-card"
+            class="project-card reveal reveal-up"
             [class.md:col-span-2]="project.featured">
 
             <div class="flex items-start justify-between gap-4">
               <div>
                 <span *ngIf="project.featured" class="mb-3 inline-block rounded-full bg-cyan-400/10 px-3 py-1 text-xs font-medium text-cyan-300">
-                  Featured
+                  Featured Professional Project
                 </span>
                 <h3 class="text-xl font-bold">{{ project.name }}</h3>
+                <p class="mt-2 text-sm text-cyan-400">{{ project.company }} · {{ project.period }}</p>
               </div>
 
               <div class="flex gap-2 text-sm">
@@ -231,6 +254,13 @@
 
             <p class="mt-5 leading-7 text-slate-400">{{ project.description }}</p>
 
+            <ul class="mt-5 space-y-2 text-sm leading-6 text-slate-400">
+              <li *ngFor="let detail of project.details" class="flex gap-3">
+                <span class="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-cyan-400"></span>
+                <span>{{ detail }}</span>
+              </li>
+            </ul>
+
             <div class="mt-7 flex flex-wrap gap-2">
               <span *ngFor="let tech of project.technologies" class="skill-pill">{{ tech }}</span>
             </div>
@@ -240,18 +270,38 @@
     </section>
 
     <!-- Education -->
-    <section id="education" class="section">
+    <section id="education" class="section-shell section">
       <div class="section-inner">
         <p class="section-eyebrow">05 — Education</p>
         <h2 class="section-title">Academic background</h2>
 
         <div class="mt-12 grid gap-5 md:grid-cols-2">
-          <article *ngFor="let item of resume().education" class="education-card">
-            <p class="text-sm text-cyan-400">{{ item.year }}</p>
-            <h3 class="mt-3 text-xl font-bold">{{ item.degree }}</h3>
+          <article *ngFor="let item of resume().education" class="education-card reveal reveal-up">
+            <div class="flex items-start justify-between gap-4">
+              <p class="text-sm text-cyan-400">{{ item.startDate }} — {{ item.endDate }}</p>
+              <span class="rounded-full border border-cyan-400/20 bg-cyan-400/10 px-3 py-1 text-xs font-semibold text-cyan-300">
+                {{ item.grade }}
+              </span>
+            </div>
+            <h3 class="mt-4 text-xl font-bold">{{ item.degree }}</h3>
             <p class="mt-2 text-slate-300">{{ item.institution }}</p>
             <p class="mt-1 text-sm text-slate-500">{{ item.location }}</p>
-            <p *ngIf="item.description" class="mt-5 text-sm leading-7 text-slate-400">{{ item.description }}</p>
+          </article>
+        </div>
+
+        <div class="mt-10 grid gap-5 md:grid-cols-2">
+          <article class="skill-group reveal reveal-up">
+            <h3>Languages</h3>
+            <div class="mt-5 flex flex-wrap gap-2">
+              <span *ngFor="let language of resume().languages" class="skill-pill">{{ language }}</span>
+            </div>
+          </article>
+
+          <article class="skill-group reveal reveal-up">
+            <h3>Interests</h3>
+            <div class="mt-5 flex flex-wrap gap-2">
+              <span *ngFor="let interest of resume().interests" class="skill-pill">{{ interest }}</span>
+            </div>
           </article>
         </div>
       </div>
@@ -260,7 +310,7 @@
     <!-- Contact -->
     <section id="contact" class="section pb-24">
       <div class="section-inner">
-        <div class="rounded-[2rem] border border-cyan-400/20 bg-gradient-to-br from-cyan-400/10 to-blue-500/5 p-8 text-center sm:p-12">
+        <div class="contact-card reveal reveal-scale rounded-[2rem] border border-cyan-400/20 bg-gradient-to-br from-cyan-400/10 to-blue-500/5 p-8 text-center sm:p-12">
           <p class="section-eyebrow">06 — Contact</p>
           <h2 class="mt-3 text-3xl font-black sm:text-4xl">Let's build something useful.</h2>
           <p class="mx-auto mt-5 max-w-2xl leading-7 text-slate-400">
@@ -274,7 +324,7 @@
             <a [href]="resume().personal.github" target="_blank" rel="noopener" class="secondary-button">
               GitHub
             </a>
-            <a [href]="resume().personal.linkedin" target="_blank" rel="noopener" class="secondary-button">
+            <a *ngIf="resume().personal.linkedin" [href]="resume().personal.linkedin" target="_blank" rel="noopener" class="secondary-button">
               LinkedIn
             </a>
           </div>
@@ -285,7 +335,7 @@
 
   <footer class="border-t border-white/10 py-8">
     <div class="mx-auto flex max-w-6xl flex-col gap-3 px-5 text-sm text-slate-500 sm:flex-row sm:items-center sm:justify-between lg:px-8">
-      <p>© {{ 2026 }} {{ resume().personal.name }}</p>
+      <p>© {{ currentYear }} {{ resume().personal.name }}</p>
       <p>Built with Angular & Tailwind CSS</p>
     </div>
   </footer>
