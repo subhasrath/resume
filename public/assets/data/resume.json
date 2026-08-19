@@ -138,6 +138,7 @@
       "technologies": [
         "Angular",
         "Leaflet",
+        "Spring Boot",
         "PostgreSQL",
         "proj4"
       ],
@@ -148,6 +149,7 @@
       "description": "A personal expense and ledger application designed to maintain purchases, dues, earnings and financial entries.",
       "technologies": [
         "Angular",
+        "Spring",
         "Spring Boot",
         "PostgreSQL"
       ],
