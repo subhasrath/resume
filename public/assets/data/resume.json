@@ -1,0 +1,166 @@
+{
+  "personal": {
+    "name": "Subhas Chandra Rath",
+    "shortName": "SR",
+    "title": "Software Developer",
+    "location": "India",
+    "email": "your-email@example.com",
+    "github": "https://github.com/subhasrath",
+    "linkedin": "https://www.linkedin.com/in/subhasrath/",
+    "resumeUrl": "assets/resume.pdf",
+    "summary": "Software Developer specializing in Java, Spring, Spring Boot, Angular and PostgreSQL, with a focus on building maintainable enterprise applications and modern web interfaces.",
+    "availability": "Open to opportunities"
+  },
+  "experience": [
+    {
+      "company": "Akiko Sherman Infotech Pvt. Ltd.",
+      "position": "Software Developer Level-4",
+      "startDate": "March 2023",
+      "endDate": "Present",
+      "location": "India",
+      "description": [
+        "Developing enterprise web applications using Angular and Java-based technologies.",
+        "Building reusable frontend components and integrating REST APIs.",
+        "Working with PostgreSQL and DB2-backed business applications.",
+        "Contributing to application architecture, deployment and UI modernization."
+      ],
+      "technologies": [
+        "Java",
+        "Spring",
+        "Spring Boot",
+        "Angular",
+        "TypeScript",
+        "PostgreSQL",
+        "DB2"
+      ]
+    },
+    {
+      "company": "Pioneer E Solutions",
+      "position": "Software Developer",
+      "startDate": "Previous",
+      "endDate": "Previous",
+      "location": "India",
+      "description": [
+        "Worked on web application development and software maintenance.",
+        "Contributed to backend and frontend application features."
+      ],
+      "technologies": [
+        "Java",
+        "J2EE",
+        "Spring",
+        "Angular"
+      ]
+    },
+    {
+      "company": "Velocis Systems",
+      "position": "Software Developer",
+      "startDate": "Previous",
+      "endDate": "Previous",
+      "location": "India",
+      "description": [
+        "Worked on enterprise software development and application support."
+      ],
+      "technologies": [
+        "Java",
+        "J2EE",
+        "Spring"
+      ]
+    }
+  ],
+  "skills": [
+    {
+      "name": "Backend",
+      "skills": [
+        "Java",
+        "J2EE",
+        "Spring",
+        "Spring Boot",
+        "REST API"
+      ]
+    },
+    {
+      "name": "Frontend",
+      "skills": [
+        "Angular",
+        "TypeScript",
+        "HTML",
+        "CSS",
+        "Tailwind CSS",
+        "Responsive UI"
+      ]
+    },
+    {
+      "name": "Database",
+      "skills": [
+        "PostgreSQL",
+        "DB2",
+        "MySQL"
+      ]
+    },
+    {
+      "name": "Tools & Platform",
+      "skills": [
+        "Git",
+        "Docker",
+        "Linux",
+        "Tomcat",
+        "GitHub"
+      ]
+    }
+  ],
+  "projects": [
+    {
+      "name": "Enterprise Business Application Portal",
+      "description": "A centralized Angular portal for launching and managing multiple enterprise business applications with shared navigation and reusable UI architecture.",
+      "technologies": [
+        "Angular",
+        "TypeScript",
+        "Tailwind CSS",
+        "Spring Boot"
+      ],
+      "github": "https://github.com/YOUR_USERNAME",
+      "featured": true
+    },
+    {
+      "name": "Electricity Billing Application",
+      "description": "A business application for electricity billing workflows, form processing, billing operations and bill preview.",
+      "technologies": [
+        "Angular",
+        "Spring Boot",
+        "PostgreSQL",
+        "jsPDF"
+      ],
+      "featured": false
+    },
+    {
+      "name": "GIS Mapping Application",
+      "description": "A web-based GIS application using Angular and Leaflet to display plot boundaries and geographic business data.",
+      "technologies": [
+        "Angular",
+        "Leaflet",
+        "PostgreSQL",
+        "proj4"
+      ],
+      "featured": false
+    },
+    {
+      "name": "Expense Manager",
+      "description": "A personal expense and ledger application designed to maintain purchases, dues, earnings and financial entries.",
+      "technologies": [
+        "Angular",
+        "Spring Boot",
+        "PostgreSQL"
+      ],
+      "featured": false
+    }
+  ],
+  "education": [
+    {
+      "degree": "M.Tech.",
+      "institution": "ABC University",
+      "location": "Haldia, India",
+      "year": "2022",
+      "description": "Master of Technology"
+    }
+  ]
+}

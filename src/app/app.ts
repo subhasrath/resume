@@ -1,9 +1,9 @@
 import { Component, signal } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
+import { Resume } from "./component/resume/resume";
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet],
+  imports: [Resume],
   templateUrl: './app.html',
   styleUrl: './app.css'
 })
