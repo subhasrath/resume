@@ -148,6 +148,7 @@
       "description": "A personal expense and ledger application designed to maintain purchases, dues, earnings and financial entries.",
       "technologies": [
         "Angular",
+        "Spring",
         "Spring Boot",
         "PostgreSQL"
       ],
