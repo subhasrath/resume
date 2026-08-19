@@ -138,6 +138,7 @@
       "technologies": [
         "Angular",
         "Leaflet",
+        "Spring Boot",
         "PostgreSQL",
         "proj4"
       ],
